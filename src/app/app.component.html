@@ -1,0 +1,39 @@
+<input type="button" (click)="submit(x)" value="Add Parent Component Button">
+
+<div *ngFor="let num of this.arr1,let i = index" style="background-color: red;margin-bottom: 30px;">
+
+ Parent Component {{num}}
+
+  <br>
+
+Name : {{result[i]}}
+
+<div style="display: flex;">
+<input [(ngModel)]="numb1[i]"  placeholder="Edit Text">
+<input type="button" (click)="save(i)" value="Save">
+</div>
+
+
+<input type="button"  (click)="submit1(i,y)" value="+">
+
+ <div *ngFor="let num1 of this.arr3,let j = index" >
+
+  <div style="background-color: yellow;" *ngIf="this.arr3[j]['X'] == num">
+
+  Child Component {{this.arr3[j]['Y']}}
+
+  <br>
+
+  Name : {{result1[j]}}
+  
+  <div style="display: flex;">
+  <input [(ngModel)]="numb2[j]"  placeholder="Edit Text">
+  <input type="button" (click)="save1(j)" value="Save">
+  </div>
+</div>
+
+</div>
+
+
+
+</div>
